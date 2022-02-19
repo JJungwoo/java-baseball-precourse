@@ -1,5 +1,7 @@
 package baseball.domain;
 
+import baseball.util.BaseBallValues;
+
 public class UserNumber extends Number {
 
     public UserNumber(String numberStr) {
@@ -8,8 +10,8 @@ public class UserNumber extends Number {
     }
 
     private static int[] convertNumberStrToIntArray(String numberStr) {
-        int[] numbers = new int[NUMBER_LENGTH];
-        for (int i = 0; i < NUMBER_LENGTH; i++) {
+        int[] numbers = new int[BaseBallValues.NUMBER_LENGTH];
+        for (int i = 0; i < BaseBallValues.NUMBER_LENGTH; i++) {
             numbers[i] = (int) numberStr.charAt(i);
         }
         return numbers;

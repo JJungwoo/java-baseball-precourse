@@ -1,8 +1,8 @@
 package baseball.domain;
 
-public abstract class Number {
+import baseball.util.BaseBallValues;
 
-    protected static final int NUMBER_LENGTH = 3;
+public abstract class Number {
 
     protected int[] numbers;
 
@@ -15,11 +15,11 @@ public abstract class Number {
     }
 
     protected void validateNumber(String target) {
-        if (numbers.length > NUMBER_LENGTH) {
+        if (numbers.length > BaseBallValues.NUMBER_LENGTH) {
             throw new IllegalArgumentException("[ERROR] " + target + " 값이 너무 많습니다.");
         }
 
-        if (numbers.length < NUMBER_LENGTH) {
+        if (numbers.length < BaseBallValues.NUMBER_LENGTH) {
             throw new IllegalArgumentException("[ERROR] " + target + " 값이 너무 적습니다.");
         }
 

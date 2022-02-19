@@ -1,14 +1,12 @@
 package baseball.domain;
 
+import baseball.util.BaseBallValues;
 import nextstep.utils.Randoms;
 
 public class ComNumber extends Number {
 
     private static int overlapFlag;
     private static int index;
-
-    private static final int BEGIN_NUMBER = 1;
-    private static final int END_NUMBER = 1;
 
     public ComNumber(int[] numbers) {
         super(numbers);
@@ -19,11 +17,12 @@ public class ComNumber extends Number {
     }
 
     private void createRandomComNumber() {
-        if (++index >= NUMBER_LENGTH) {
+        if (++index >= BaseBallValues.NUMBER_LENGTH) {
             return;
         }
 
-        super.numbers[index] = Randoms.pickNumberInRange(BEGIN_NUMBER, END_NUMBER);
+        super.numbers[index] = Randoms.pickNumberInRange(
+                BaseBallValues.BEGIN_NUMBER, BaseBallValues.END_NUMBER);
         if (checkOverlapNumber()) {
             index--;
         }
