@@ -5,15 +5,14 @@ import nextstep.utils.Randoms;
 
 public class ComNumber extends Number {
 
-    private static int overlapFlag;
+    private boolean[] checkMap = new boolean[BaseBallValues.END_NUMBER + 1];
     private static int index;
 
     public ComNumber(int[] numbers) {
         super(numbers);
-        validateNumber("컴퓨터");
         index = -1;
-        overlapFlag = 0;
         createRandomComNumber();
+        validateNumber("컴퓨터");
     }
 
     private void createRandomComNumber() {
@@ -31,6 +30,10 @@ public class ComNumber extends Number {
 
     // 리턴 true 일 때 값 중복
     private boolean checkOverlapNumber() {
-        return (overlapFlag ^ super.numbers[index]) != overlapFlag;
+        if (checkMap[super.numbers[index]]) {
+            return true;
+        }
+        checkMap[super.numbers[index]] = true;
+        return false;
     }
 }

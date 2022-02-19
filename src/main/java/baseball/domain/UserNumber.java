@@ -12,7 +12,7 @@ public class UserNumber extends Number {
     private static int[] convertNumberStrToIntArray(String numberStr) {
         int[] numbers = new int[BaseBallValues.NUMBER_LENGTH];
         for (int i = 0; i < BaseBallValues.NUMBER_LENGTH; i++) {
-            numbers[i] = (int) numberStr.charAt(i);
+            numbers[i] = numberStr.charAt(i) - '0';
         }
         return numbers;
     }
