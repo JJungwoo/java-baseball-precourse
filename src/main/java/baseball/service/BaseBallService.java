@@ -56,15 +56,6 @@ public class BaseBallService {
             checkNumberStrike(i, user);
         }
 
-        for (int i =0 ; i < 3;i++) {
-            System.out.print(com[i] + " ");
-        }
-        System.out.println();
-        for (int i =0 ; i < 3;i++) {
-            System.out.print(user[i] + " ");
-        }
-        System.out.println();
-
         printMessage();
         return strike != BaseBallValues.NUMBER_LENGTH;
     }
